@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Tu Nombre — Desarrollador Fullstack</title>
+        <link
+            rel="preconnect"
+            href="https://fonts.googleapis.com"
+        />
+        <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- NAV -->
+        <nav>
+            <span class="nav-logo">TU_NOMBRE</span>
+            <ul class="nav-links">
+                <li><a href="#stack">Stack</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#testimonios">Clientes</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!-- HERO -->
+        <section id="hero">
+            <div class="container">
+                <p class="hero-eyebrow">Desarrollador Fullstack · Backend · Frontend · Mobile</p>
+                <h1 class="hero-title">
+                    Tu nombre<br />
+                    <em>en código.</em>
+                </h1>
+                <p class="hero-desc">
+                    Construyo productos digitales desde el backend hasta la pantalla. Sistemas robustos, interfaces que funcionan,
+                    aplicaciones móviles que la gente usa de verdad.
+                </p>
+                <div class="hero-actions">
+                    <a
+                        href="#proyectos"
+                        class="btn btn-primary"
+                        >Ver proyectos ↓</a
+                    >
+                    <a
+                        href="#contacto"
+                        class="btn"
+                        >Contactar</a
+                    >
+                </div>
+
+                <div class="counters">
+                    <div class="counter-cell">
+                        <span
+                            class="counter-num"
+                            id="c1"
+                            >0</span
+                        >
+                        <span class="counter-lbl">Proyectos entregados</span>
+                    </div>
+                    <div class="counter-cell">
+                        <span
+                            class="counter-num"
+                            id="c2"
+                            >0</span
+                        >
+                        <span class="counter-lbl">Años de experiencia</span>
+                    </div>
+                    <div class="counter-cell">
+                        <span
+                            class="counter-num"
+                            id="c3"
+                            >0</span
+                        >
+                        <span class="counter-lbl">Tecnologías dominadas</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STACK -->
+        <section id="stack">
+            <div class="container">
+                <p class="section-label">Stack técnico</p>
+                <div
+                    class="stack-grid reveal"
+                    style="grid-template-columns: repeat(2, 1fr)"
+                >
+                    <div class="stack-card">
+                        <p class="stack-card-label">Lenguajes</p>
+                        <div class="stack-pills">
+                            <span class="pill">Java</span>
+                            <span class="pill">PHP</span>
+                            <span class="pill">Dart</span>
+                            <span class="pill">JavaScript</span>
+                        </div>
+                    </div>
+                    <div class="stack-card">
+                        <p class="stack-card-label">Frameworks</p>
+                        <div class="stack-pills">
+                            <span class="pill">Spring Boot</span>
+                            <span class="pill">Flutter</span>
+                            <span class="pill">React</span>
+                            <span class="pill">Thymeleaf</span>
+                            <span class="pill">Laravel</span>
+                        </div>
+                    </div>
+                    <div class="stack-card">
+                        <p class="stack-card-label">Base de datos</p>
+                        <div class="stack-pills">
+                            <span class="pill">MySQL</span>
+                            <span class="pill">PostgreSQL</span>
+                        </div>
+                    </div>
+                    <div class="stack-card">
+                        <p class="stack-card-label">Herramientas</p>
+                        <div class="stack-pills">
+                            <span class="pill">Git</span>
+                            <span class="pill">GitHub</span>
+                            <span class="pill">Docker</span>
+                            <span class="pill">Postman</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROYECTOS -->
+        <section id="proyectos">
+            <div class="container">
+                <p class="section-label">Proyectos seleccionados</p>
+
+                <div class="project-list reveal">
+                    <a
+                        class="project-item"
+                        href="#"
+                        data-img="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=680&q=80"
+                        data-label="Dashboard SaaS"
+                        data-type="Web App"
+                    >
+                        <span class="proj-num">01</span>
+                        <div class="proj-body">
+                            <p class="proj-title">Nombre del proyecto</p>
+                            <p class="proj-desc">
+                                Descripción breve del problema que resolviste. Una o dos líneas que expliquen qué construiste y qué impacto
+                                tuvo en el negocio o los usuarios.
+                            </p>
+                            <div class="proj-tags">
+                                <span class="proj-tag">Spring Boot</span>
+                                <span class="proj-tag">React</span>
+                                <span class="proj-tag">MySQL</span>
+                                <span class="proj-tag">Docker</span>
+                            </div>
+                            <div class="proj-expand-area">
+                                <img
+                                    class="proj-expand-img"
+                                    src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=680&q=80"
+                                    alt="Dashboard SaaS"
+                                />
+                            </div>
+                        </div>
+                        <span class="proj-arrow">↗</span>
+                        <span class="proj-chevron">↓</span>
+                    </a>
+
+                    <a
+                        class="project-item"
+                        href="#"
+                        data-img="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=680&q=80"
+                        data-label="App móvil"
+                        data-type="Mobile"
+                    >
+                        <span class="proj-num">02</span>
+                        <div class="proj-body">
+                            <p class="proj-title">Nombre del proyecto</p>
+                            <p class="proj-desc">
+                                Descripción breve del problema que resolviste. Una o dos líneas que expliquen qué construiste y qué impacto
+                                tuvo en el negocio o los usuarios.
+                            </p>
+                            <div class="proj-tags">
+                                <span class="proj-tag">Flutter</span>
+                                <span class="proj-tag">Dart</span>
+                                <span class="proj-tag">Firebase</span>
+                            </div>
+                            <div class="proj-expand-area">
+                                <img
+                                    class="proj-expand-img"
+                                    src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=680&q=80"
+                                    alt="App móvil"
+                                />
+                            </div>
+                        </div>
+                        <span class="proj-arrow">↗</span>
+                        <span class="proj-chevron">↓</span>
+                    </a>
+
+                    <a
+                        class="project-item"
+                        href="#"
+                        data-img="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=680&q=80"
+                        data-label="Infraestructura cloud"
+                        data-type="Backend"
+                    >
+                        <span class="proj-num">03</span>
+                        <div class="proj-body">
+                            <p class="proj-title">Nombre del proyecto</p>
+                            <p class="proj-desc">
+                                Descripción breve del problema que resolviste. Una o dos líneas que expliquen qué construiste y qué impacto
+                                tuvo en el negocio o los usuarios.
+                            </p>
+                            <div class="proj-tags">
+                                <span class="proj-tag">Java</span>
+                                <span class="proj-tag">Docker</span>
+                                <span class="proj-tag">PostgreSQL</span>
+                            </div>
+                            <div class="proj-expand-area">
+                                <img
+                                    class="proj-expand-img"
+                                    src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=680&q=80"
+                                    alt="Backend"
+                                />
+                            </div>
+                        </div>
+                        <span class="proj-arrow">↗</span>
+                        <span class="proj-chevron">↓</span>
+                    </a>
+
+                    <a
+                        class="project-item"
+                        href="#"
+                        data-img="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=680&q=80"
+                        data-label="Landing + CMS"
+                        data-type="Fullstack"
+                    >
+                        <span class="proj-num">04</span>
+                        <div class="proj-body">
+                            <p class="proj-title">Nombre del proyecto</p>
+                            <p class="proj-desc">
+                                Descripción breve del problema que resolviste. Una o dos líneas que expliquen qué construiste y qué impacto
+                                tuvo en el negocio o los usuarios.
+                            </p>
+                            <div class="proj-tags">
+                                <span class="proj-tag">Laravel</span>
+                                <span class="proj-tag">PHP</span>
+                                <span class="proj-tag">Thymeleaf</span>
+                            </div>
+                            <div class="proj-expand-area">
+                                <img
+                                    class="proj-expand-img"
+                                    src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=680&q=80"
+                                    alt="Fullstack"
+                                />
+                            </div>
+                        </div>
+                        <span class="proj-arrow">↗</span>
+                        <span class="proj-chevron">↓</span>
+                    </a>
+                </div>
+                <!-- /.project-list -->
+            </div>
+        </section>
+
+        <!-- FLOATING IMAGE PREVIEW -->
+        <div
+            class="proj-preview"
+            id="projPreview"
+        >
+            <img
+                id="projPreviewImg"
+                src=""
+                alt=""
+            />
+            <div class="proj-preview-label">
+                <strong id="projPreviewLabel">—</strong>
+                <span id="projPreviewType">—</span>
+            </div>
+        </div>
+
+        <!-- TESTIMONIOS -->
+        <section id="testimonios">
+            <div class="container">
+                <p class="section-label">Lo que dicen</p>
+                <div class="testi-grid reveal">
+                    <div class="testi-card">
+                        <p class="testi-quote">
+                            "Entregó antes del deadline y el código estaba impecable. Sabe anticiparse a los problemas antes de que
+                            aparezcan."
+                        </p>
+                        <div class="testi-author">
+                            <div class="testi-avatar">CA</div>
+                            <div>
+                                <p class="testi-name">Cliente A</p>
+                                <p class="testi-role">Startup SaaS · Fundador</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testi-card">
+                        <p class="testi-quote">
+                            "Tomó un problema complejo y lo resolvió de forma elegante. Muy buen criterio técnico y comunicación clara."
+                        </p>
+                        <div class="testi-author">
+                            <div class="testi-avatar">CB</div>
+                            <div>
+                                <p class="testi-name">Cliente B</p>
+                                <p class="testi-role">E-commerce · CTO</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testi-card">
+                        <p class="testi-quote">
+                            "La app que construyó tiene un rendimiento excelente. Usuarios felices, nosotros felices. Lo recomiendo sin
+                            dudar."
+                        </p>
+                        <div class="testi-author">
+                            <div class="testi-avatar">CC</div>
+                            <div>
+                                <p class="testi-name">Cliente C</p>
+                                <p class="testi-role">Producto Digital · CEO</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testi-card">
+                        <p class="testi-quote">
+                            "Documentó todo, hizo code reviews claros y el deploy fue sin drama. Exactamente lo que necesitábamos."
+                        </p>
+                        <div class="testi-author">
+                            <div class="testi-avatar">CD</div>
+                            <div>
+                                <p class="testi-name">Cliente D</p>
+                                <p class="testi-role">Agencia Tech · Lead Dev</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DISPONIBILIDAD / CONTACTO -->
+        <section id="contacto">
+            <div class="container">
+                <p class="section-label">Disponibilidad</p>
+                <div class="avail-block reveal">
+                    <div class="avail-left">
+                        <div class="avail-dot"></div>
+                        <div>
+                            <p class="avail-status">Disponible para proyectos</p>
+                            <p class="avail-sub">Freelance · Tiempo completo · Remoto</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap">
+                        <a
+                            href="/cdn-cgi/l/email-protection#552120153038343c397b363a38"
+                            class="btn btn-primary"
+                            >Escribime ↗</a
+                        >
+                        <a
+                            href="https://wa.me/549XXXXXXXXXX"
+                            class="btn"
+                            target="_blank"
+                            >WhatsApp</a
+                        >
+                    </div>
+                </div>
+
+                <div
+                    style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 8px"
+                    class="reveal"
+                >
+                    <a
+                        href="https://github.com/tuusuario"
+                        target="_blank"
+                        class="btn"
+                        style="justify-content: center"
+                        >GitHub ↗</a
+                    >
+                    <a
+                        href="https://linkedin.com/in/tuusuario"
+                        target="_blank"
+                        class="btn"
+                        style="justify-content: center"
+                        >LinkedIn ↗</a
+                    >
+                    <a
+                        href="cv.pdf"
+                        class="btn"
+                        style="justify-content: center"
+                        >Descargar CV ↗</a
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="container">
+                <div class="footer-inner">
+                    <span class="footer-copy">TU_NOMBRE · 2026 · Todos los derechos reservados</span>
+                    <ul class="footer-links">
+                        <li><a href="#hero">Inicio</a></li>
+                        <li><a href="#stack">Stack</a></li>
+                        <li><a href="#proyectos">Proyectos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+        <script
+            data-cfasync="false"
+            src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+        ></script>
+        <script src="app.js"></script>
+    </body>
+</html>
