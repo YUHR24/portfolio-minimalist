@@ -15,8 +15,8 @@ function animateCounter(id, target, suffix, duration) {
 
 window.addEventListener("load", () => {
     setTimeout(() => {
-        animateCounter("c1", 12, "+", 1000);
-        animateCounter("c2", 4, "", 800);
+        animateCounter("c1", 4, "+", 1000);
+        animateCounter("c2", 3, "", 800);
         animateCounter("c3", 10, "+", 900);
     }, 600);
 });
