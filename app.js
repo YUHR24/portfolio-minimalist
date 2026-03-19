@@ -144,7 +144,13 @@ document.querySelectorAll(".project-item[data-img]").forEach((item) => {
 
 /* --- CONTACT FORM --- */
 const form = document.getElementById('contactForm');
-const success = document.getElementById('formSuccess');
+const toast = document.getElementById('toast');
+
+function showToast(msg) {
+    toast.textContent = msg;
+    toast.classList.add('visible');
+    setTimeout(() => toast.classList.remove('visible'), 3500);
+}
 
 if (form) {
     form.addEventListener('submit', async (e) => {
@@ -157,8 +163,9 @@ if (form) {
         });
         if (res.ok) {
             form.reset();
-            success.style.display = 'block';
-            setTimeout(() => success.style.display = 'none', 4000);
+            showToast('Mensaje enviado. Te respondo pronto.');
+        } else {
+            showToast('Algo salió mal. Intentá de nuevo.');
         }
     });
 }
