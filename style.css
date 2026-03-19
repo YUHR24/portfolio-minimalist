@@ -736,6 +736,7 @@ footer {
 }
 
 .toast {
+    display: none;
     position: fixed;
     bottom: 2rem;
     right: 2rem;
@@ -746,7 +747,7 @@ footer {
     letter-spacing: 0.06em;
     padding: 0.85rem 1.25rem;
     border-radius: 4px;
-    z-index: 999;
+    z-index: 9999;
     opacity: 0;
     transform: translateY(10px);
     transition: opacity 0.25s ease, transform 0.25s ease;
@@ -754,6 +755,7 @@ footer {
 }
 
 .toast.visible {
+    display: block;
     opacity: 1;
     transform: translateY(0);
 }

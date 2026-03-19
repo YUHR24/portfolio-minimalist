@@ -148,8 +148,14 @@ const toast = document.getElementById('toast');
 
 function showToast(msg) {
     toast.textContent = msg;
-    toast.classList.add('visible');
-    setTimeout(() => toast.classList.remove('visible'), 3500);
+    toast.style.display = 'block';
+    requestAnimationFrame(() => {
+        toast.classList.add('visible');
+    });
+    setTimeout(() => {
+        toast.classList.remove('visible');
+        setTimeout(() => toast.style.display = 'none', 300);
+    }, 3500);
 }
 
 if (form) {
