@@ -698,3 +698,47 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* CONTACT FORM */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 0.75rem 1rem;
+    background: var(--bg);
+    border: 0.5px solid var(--border-2);
+    border-radius: 4px;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s;
+    resize: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--text);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--text-3);
+}
+
+.contact-form textarea {
+    height: 120px;
+}
+
+.form-success {
+    font-size: 12px;
+    color: var(--green);
+    letter-spacing: 0.06em;
+    display: none;
+    margin-top: 0.5rem;
+}

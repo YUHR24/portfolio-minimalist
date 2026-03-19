@@ -140,3 +140,25 @@ document.querySelectorAll(".project-item[data-img]").forEach((item) => {
         }
     });
 });
+
+
+/* --- CONTACT FORM --- */
+const form = document.getElementById('contactForm');
+const success = document.getElementById('formSuccess');
+
+if (form) {
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const res = await fetch('https://formspree.io/f/mkoqklkv', {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+            form.reset();
+            success.style.display = 'block';
+            setTimeout(() => success.style.display = 'none', 4000);
+        }
+    });
+}

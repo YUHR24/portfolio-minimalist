@@ -363,19 +363,54 @@
                             <p class="avail-sub">Freelance · Tiempo completo · Remoto</p>
                         </div>
                     </div>
-                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap">
+                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1.5rem">
                         <a
-                            href="mailto:tunombre@gmail.com?subject=Contacto%20desde%20portafolio"
-                            class="btn btn-primary"
-                            >Escribime ↗</a
-                        >
-                        <a
-                            href="https://wa.me/9631064864"
+                            href="https://wa.me/529631064864"
                             class="btn"
                             target="_blank"
                             >WhatsApp</a
                         >
                     </div>
+                    <form
+                        class="contact-form"
+                        id="contactForm"
+                    >
+                        <input
+                            type="text"
+                            name="nombre"
+                            placeholder="Tu nombre"
+                            required
+                        />
+                        <input
+                            type="email"
+                            name="email"
+                            placeholder="Tu email"
+                            required
+                        />
+                        <textarea
+                            name="mensaje"
+                            placeholder="Tu mensaje"
+                            required
+                        ></textarea>
+                        <input
+                            type="hidden"
+                            name="_subject"
+                            value="Contacto desde Portfolio"
+                        />
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                            style="align-self: flex-start"
+                        >
+                            Enviar mensaje ↗
+                        </button>
+                        <p
+                            class="form-success"
+                            id="formSuccess"
+                        >
+                            Mensaje enviado. Te respondo pronto.
+                        </p>
+                    </form>
                 </div>
 
                 <div
