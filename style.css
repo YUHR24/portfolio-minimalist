@@ -483,7 +483,7 @@ section {
 }
 
 /* TESTIMONIALS */
-.testi-grid {
+/* .testi-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1px;
@@ -534,7 +534,7 @@ section {
 .testi-role {
     font-size: 11px;
     color: var(--text-3);
-}
+} */
 
 /* AVAILABILITY */
 .avail-block {
