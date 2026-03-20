@@ -54,6 +54,7 @@ window.addEventListener("scroll", () => {
 const preview = document.getElementById("projPreview");
 const previewImg = document.getElementById("projPreviewImg");
 const previewLbl = document.getElementById("projPreviewLabel");
+const previewVid = document.getElementById('projPreviewVid');
 const previewTyp = document.getElementById("projPreviewType");
 
 let mouseX = 0,
@@ -94,30 +95,50 @@ document.querySelectorAll(".project-item[data-img]").forEach((item) => {
     const chevron = item.querySelector(".proj-chevron");
 
     /* DESKTOP hover */
-    item.addEventListener("mouseenter", (e) => {
-        if (isMobile()) return;
-        previewImg.src = item.dataset.img;
-        previewLbl.textContent = item.dataset.label;
-        previewTyp.textContent = item.dataset.type;
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        curX = mouseX;
-        curY = mouseY;
-        isHovering = true;
-        preview.classList.add("visible");
-        cancelAnimationFrame(rafId);
-        rafId = requestAnimationFrame(animatePreview);
-    });
+    item.addEventListener('mouseenter', (e) => {
+    if (isMobile()) return;
+
+    const src = item.dataset.img;
+    const isVideo = src.match(/\.(mp4|webm|ogg)$/i);
+
+    preview.className = 'proj-preview';
+    if (item.dataset.previewClass) {
+        preview.classList.add(item.dataset.previewClass);
+    }
+
+    if (isVideo) {
+        previewImg.style.display = 'none';
+        previewVid.style.display = 'block';
+        previewVid.src = src;
+        previewVid.play();
+    } else {
+        previewVid.style.display = 'none';
+        previewVid.src = '';
+        previewImg.style.display = 'block';
+        previewImg.src = src;
+    }
+
+    previewLbl.textContent = item.dataset.label;
+    previewTyp.textContent = item.dataset.type;
+    mouseX = e.clientX; mouseY = e.clientY;
+    curX = mouseX; curY = mouseY;
+    isHovering = true;
+    preview.classList.add('visible');
+    cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(animatePreview);
+});
     item.addEventListener("mousemove", (e) => {
         if (isMobile()) return;
         mouseX = e.clientX;
         mouseY = e.clientY;
     });
     item.addEventListener("mouseleave", () => {
-        if (isMobile()) return;
-        isHovering = false;
-        preview.classList.remove("visible");
-        cancelAnimationFrame(rafId);
+    if (isMobile()) return;
+    isHovering = false;
+    preview.classList.remove("visible");
+    cancelAnimationFrame(rafId);
+    previewVid.pause();
+    previewVid.src = '';
     });
 
     /* MOBILE tap */

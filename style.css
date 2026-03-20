@@ -419,6 +419,23 @@ section {
     }
 }
 
+.proj-preview.mobile-app {
+    width: 248px;
+    height: 537px;
+}
+
+.proj-expand-img.contain {
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+    background: var(--bg-card);
+}
+
+.proj-preview.mobile-app img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
 /* MOBILE TAP EXPAND */
 .proj-expand-img {
     width: 100%;

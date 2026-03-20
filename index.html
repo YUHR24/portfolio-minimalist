@@ -146,29 +146,33 @@
                 <div class="project-list reveal">
                     <a
                         class="project-item"
-                        href="#"
-                        data-img="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=680&q=80"
-                        data-label="Dashboard SaaS"
-                        data-type="Web App"
+                        href="https://centralbus.mx/download"
+                        data-img="assets/videos/centralbus.MP4"
+                        data-label="CentralBus"
+                        data-type="App móvil"
+                        data-preview-class="mobile-app"
                     >
                         <span class="proj-num">01</span>
                         <div class="proj-body">
-                            <p class="proj-title">Nombre del proyecto</p>
+                            <p class="proj-title">Centralbus</p>
                             <p class="proj-desc">
-                                Descripción breve del problema que resolviste. Una o dos líneas que expliquen qué construiste y qué impacto
-                                tuvo en el negocio o los usuarios.
+                                Aplicación móvil multiplataforma destinada a la compra y gestión de viajes intermunicipales, pago de
+                                servicios y eventos, publicada en App Store, Google Play y Huawei AppGallery.
                             </p>
                             <div class="proj-tags">
+                                <span class="proj-tag">Flutter</span>
+                                <span class="proj-tag">Dart</span>
                                 <span class="proj-tag">Spring Boot</span>
-                                <span class="proj-tag">React</span>
                                 <span class="proj-tag">MySQL</span>
-                                <span class="proj-tag">Docker</span>
                             </div>
                             <div class="proj-expand-area">
-                                <img
+                                <video
                                     class="proj-expand-img"
-                                    src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=680&q=80"
-                                    alt="Dashboard SaaS"
+                                    src="assets/videos/centralbus.MP4"
+                                    autoplay
+                                    loop
+                                    muted
+                                    playsinline
                                 />
                             </div>
                         </div>
@@ -179,26 +183,27 @@
                     <a
                         class="project-item"
                         href="#"
-                        data-img="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=680&q=80"
-                        data-label="App móvil"
-                        data-type="Mobile"
+                        data-img="assets/images/adopta-un-amigo.png"
+                        data-label="Adopta un Amigo"
+                        data-type="Web App"
                     >
                         <span class="proj-num">02</span>
                         <div class="proj-body">
-                            <p class="proj-title">Nombre del proyecto</p>
+                            <p class="proj-title">Adopta un amigo</p>
                             <p class="proj-desc">
                                 Descripción breve del problema que resolviste. Una o dos líneas que expliquen qué construiste y qué impacto
                                 tuvo en el negocio o los usuarios.
                             </p>
                             <div class="proj-tags">
-                                <span class="proj-tag">Flutter</span>
-                                <span class="proj-tag">Dart</span>
-                                <span class="proj-tag">Firebase</span>
+                                <span class="proj-tag">JavaScript</span>
+                                <span class="proj-tag">Tailwind</span>
+                                <span class="proj-tag">Springboot</span>
+                                <span class="proj-tag">MySQL</span>
                             </div>
                             <div class="proj-expand-area">
                                 <img
                                     class="proj-expand-img"
-                                    src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=680&q=80"
+                                    src="assets/images/adopta-un-amigo.png"
                                     alt="App móvil"
                                 />
                             </div>
@@ -211,20 +216,21 @@
                         class="project-item"
                         href="#"
                         data-img="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=680&q=80"
-                        data-label="Infraestructura cloud"
-                        data-type="Backend"
+                        data-label="Centralbus Club"
+                        data-type="App móvil"
                     >
                         <span class="proj-num">03</span>
                         <div class="proj-body">
-                            <p class="proj-title">Nombre del proyecto</p>
+                            <p class="proj-title">Centralbus Club</p>
                             <p class="proj-desc">
-                                Descripción breve del problema que resolviste. Una o dos líneas que expliquen qué construiste y qué impacto
-                                tuvo en el negocio o los usuarios.
+                                E-commerce multiplataforma con app móvil en Flutter, backend en Spring Boot y panel web en React, enfocada
+                                en una experiencia completa de compra digital.
                             </p>
                             <div class="proj-tags">
-                                <span class="proj-tag">Java</span>
-                                <span class="proj-tag">Docker</span>
-                                <span class="proj-tag">PostgreSQL</span>
+                                <span class="proj-tag">Springboot</span>
+                                <span class="proj-tag">Flutter</span>
+                                <span class="proj-tag">React</span>
+                                <span class="proj-tag">MySQl</span>
                             </div>
                             <div class="proj-expand-area">
                                 <img
@@ -283,6 +289,14 @@
                 src=""
                 alt=""
             />
+            <video
+                id="projPreviewVid"
+                autoplay
+                loop
+                muted
+                playsinline
+                style="display: none; width: 100%; height: 100%; object-fit: cover"
+            ></video>
             <div class="proj-preview-label">
                 <strong id="projPreviewLabel">—</strong>
                 <span id="projPreviewType">—</span>
@@ -456,7 +470,7 @@
         >
             Mensaje enviado. Te respondo pronto.
         </div>
-        
+
         <script
             data-cfasync="false"
             src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
