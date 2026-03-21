@@ -270,6 +270,14 @@ section {
     border-radius: 100px;
     color: var(--text-2);
     background: var(--bg);
+    transition: box-shadow 0.3s ease, transform 0.3s ease, border-color 0.2s;
+    cursor: default;
+}
+
+.pill:hover {
+    transform: scale(1.05);
+    border-color: var(--text);
+    box-shadow: 0 0 0 4px rgba(26, 26, 24, 0.08), 0 0 0 8px rgba(26, 24, 24, 0.04);
 }
 
 /* PROJECTS */
