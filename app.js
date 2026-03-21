@@ -63,10 +63,7 @@ let curX = 0,
     curY = 0;
 let rafId = null;
 let isHovering = false;
-const OFFSET_X = 28,
-    OFFSET_Y = -90,
-    W = 340,
-    H = 210;
+const OFFSET_X = 28
 
 function lerp(a, b, t) {
     return a + (b - a) * t;
@@ -78,15 +75,16 @@ function isMobile() {
 function animatePreview() {
     curX = lerp(curX, mouseX, 0.12);
     curY = lerp(curY, mouseY, 0.12);
-    const vw = window.innerWidth,
-        vh = window.innerHeight;
-    let px = curX + OFFSET_X,
-        py = curY + OFFSET_Y;
-    if (px + W > vw - 16) px = curX - W - OFFSET_X;
-    if (py < 60) py = curY + 20;
-    if (py + H > vh - 16) py = vh - H - 16;
-    preview.style.left = px + "px";
-    preview.style.top = py + "px";
+    const vw = window.innerWidth, vh = window.innerHeight;
+    const w = preview.offsetWidth;
+    const h = preview.offsetHeight;
+    let px = curX + OFFSET_X;
+    let py = curY - h / 2;
+    if (px + w > vw - 16) px = curX - w - OFFSET_X;
+    if (py < 60) py = 60;
+    if (py + h > vh - 16) py = vh - h - 16;
+    preview.style.left = px + 'px';
+    preview.style.top = py + 'px';
     if (isHovering) rafId = requestAnimationFrame(animatePreview);
 }
 
@@ -141,25 +139,29 @@ document.querySelectorAll(".project-item[data-img]").forEach((item) => {
     previewVid.src = '';
     });
 
+    function closeAllExpands() {
+    document.querySelectorAll(".proj-expand-area").forEach((a) => a.classList.remove("open"));
+    document.querySelectorAll(".proj-chevron").forEach((c) => {
+        c.classList.remove("open");
+        c.textContent = "↓";
+    });
+}
+
     /* MOBILE tap */
     item.addEventListener("click", (e) => {
-        e.preventDefault();
-        if (!isMobile()) return;
-        const isOpen = expand && expand.classList.contains("open");
-        document.querySelectorAll(".proj-expand-area").forEach((a) => a.classList.remove("open"));
-        document.querySelectorAll(".proj-chevron").forEach((c) => {
-            c.classList.remove("open");
-            c.textContent = "↓";
-        });
-        if (!isOpen && expand) {
-            expand.classList.add("open");
-            if (chevron) {
-                chevron.classList.add("open");
-                chevron.textContent = "↑";
-            }
-            setTimeout(() => item.scrollIntoView({ behavior: "smooth", block: "nearest" }), 50);
+    if (!isMobile()) return; // en desktop deja funcionar el href normal
+    e.preventDefault();
+    const isOpen = expand && expand.classList.contains("open");
+    closeAllExpands();
+    if (!isOpen && expand) {
+        expand.classList.add("open");
+        if (chevron) {
+            chevron.classList.add("open");
+            chevron.textContent = "↑";
         }
-    });
+        setTimeout(() => item.scrollIntoView({ behavior: "smooth", block: "nearest" }), 50);
+    }
+});
 });
 
 

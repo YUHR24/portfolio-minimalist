@@ -360,8 +360,8 @@ section {
 /* HOVER IMAGE PREVIEW */
 .proj-preview {
     position: fixed;
-    width: 340px;
-    height: 210px;
+    width: 420px;
+    height: 260px;
     border-radius: 8px;
     overflow: hidden;
     pointer-events: none;
@@ -458,7 +458,7 @@ section {
 }
 
 .proj-expand-area.open {
-    max-height: 320px;
+    max-height: 700px;
     padding-top: 0.75rem;
 }
 
