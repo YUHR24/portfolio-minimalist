@@ -521,6 +521,14 @@ section {
     }
 }
 
+video.proj-expand-img {
+    height: auto;
+    max-height: 600px;
+    object-fit: contain;
+    background: var(--bg-card);
+    border-radius: 6px;
+}
+
 /* TESTIMONIALS */
 /* .testi-grid {
     display: grid;
