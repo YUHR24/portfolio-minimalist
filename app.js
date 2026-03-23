@@ -113,7 +113,25 @@ document.querySelectorAll(".project-item[data-img]").forEach((item) => {
         previewVid.style.display = 'none';
         previewVid.src = '';
         previewImg.style.display = 'block';
-        previewImg.src = src;
+
+        const imgs = item.dataset.imgs
+            ? item.dataset.imgs.split(',').map(s => s.trim())
+            : [src];
+
+        let slideIndex = 0;
+        previewImg.src = imgs[0];
+
+        clearInterval(item._slideTimer);
+        if (imgs.length > 1) {
+            item._slideTimer = setInterval(() => {
+                slideIndex = (slideIndex + 1) % imgs.length;
+                previewImg.style.opacity = '0';
+                setTimeout(() => {
+                    previewImg.src = imgs[slideIndex];
+                    previewImg.style.opacity = '1';
+                }, 200);
+            }, 2000);
+        }
     }
 
     previewLbl.textContent = item.dataset.label;
@@ -124,12 +142,14 @@ document.querySelectorAll(".project-item[data-img]").forEach((item) => {
     preview.classList.add('visible');
     cancelAnimationFrame(rafId);
     rafId = requestAnimationFrame(animatePreview);
-});
+    });
+
     item.addEventListener("mousemove", (e) => {
         if (isMobile()) return;
         mouseX = e.clientX;
         mouseY = e.clientY;
     });
+
     item.addEventListener("mouseleave", () => {
     if (isMobile()) return;
     isHovering = false;
@@ -137,6 +157,7 @@ document.querySelectorAll(".project-item[data-img]").forEach((item) => {
     cancelAnimationFrame(rafId);
     previewVid.pause();
     previewVid.src = '';
+    clearInterval(item._slideTimer); 
     });
 
     function closeAllExpands() {
