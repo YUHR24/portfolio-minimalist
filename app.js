@@ -161,7 +161,13 @@ document.querySelectorAll(".project-item[data-img]").forEach((item) => {
     });
 
     function closeAllExpands() {
-    document.querySelectorAll(".proj-expand-area").forEach((a) => a.classList.remove("open"));
+    document.querySelectorAll(".proj-expand-area").forEach((a) => {
+        a.classList.remove("open");
+        const carousel = a.querySelector('.mobile-carousel');
+        if (carousel?._autoTimer) {
+            clearInterval(carousel._autoTimer);
+        }
+    });
     document.querySelectorAll(".proj-chevron").forEach((c) => {
         c.classList.remove("open");
         c.textContent = "↓";
@@ -206,7 +212,16 @@ function initMobileCarousel(container) {
         dots[current]?.classList.add('active');
     }
 
-    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+    // autoplay cada 2.5 segundos
+    const autoTimer = setInterval(() => goTo(current + 1), 2500);
+
+    // parar autoplay si el usuario swipea
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            clearInterval(autoTimer);
+            goTo(i);
+        });
+    });
 
     container.addEventListener('touchstart', (e) => {
         startX = e.touches[0].clientX;
@@ -214,8 +229,14 @@ function initMobileCarousel(container) {
 
     container.addEventListener('touchend', (e) => {
         const diff = startX - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+        if (Math.abs(diff) > 40) {
+            clearInterval(autoTimer);
+            goTo(diff > 0 ? current + 1 : current - 1);
+        }
     }, { passive: true });
+
+    // guardar referencia para limpiar cuando se cierre
+    container._autoTimer = autoTimer;
 }
 
 
