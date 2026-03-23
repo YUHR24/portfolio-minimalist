@@ -807,3 +807,49 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* MOBILE CAROUSEL */
+.mobile-carousel {
+    position: relative;
+    width: 100%;
+}
+
+.mobile-slide {
+    display: none;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-slide.active {
+    display: block;
+}
+
+.proj-expand-area.open .mobile-slide.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mobile-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.mobile-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--border-2);
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+.mobile-dot.active {
+    background: var(--text);
+}

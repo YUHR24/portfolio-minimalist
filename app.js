@@ -170,7 +170,7 @@ document.querySelectorAll(".project-item[data-img]").forEach((item) => {
 
     /* MOBILE tap */
     item.addEventListener("click", (e) => {
-    if (!isMobile()) return; // en desktop deja funcionar el href normal
+    if (!isMobile()) return;
     e.preventDefault();
     const isOpen = expand && expand.classList.contains("open");
     closeAllExpands();
@@ -180,10 +180,43 @@ document.querySelectorAll(".project-item[data-img]").forEach((item) => {
             chevron.classList.add("open");
             chevron.textContent = "↑";
         }
+        // inicializar carrusel si tiene slides
+        const carousel = expand.querySelector('.mobile-carousel');
+        if (carousel) initMobileCarousel(carousel);
         setTimeout(() => item.scrollIntoView({ behavior: "smooth", block: "nearest" }), 50);
     }
+    });
+
 });
-});
+
+/* --- MOBILE CAROUSEL --- */
+function initMobileCarousel(container) {
+    const slides = container.querySelectorAll('.mobile-slide');
+    const dots = container.querySelectorAll('.mobile-dot');
+    if (!slides.length) return;
+
+    let current = 0;
+    let startX = 0;
+
+    function goTo(index) {
+        slides[current].classList.remove('active');
+        dots[current]?.classList.remove('active');
+        current = (index + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current]?.classList.add('active');
+    }
+
+    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+    container.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    container.addEventListener('touchend', (e) => {
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+    }, { passive: true });
+}
 
 
 /* --- CONTACT FORM --- */
